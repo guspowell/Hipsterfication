@@ -62,8 +62,7 @@ h1{
  font-size: 8em;
  text-align: center;
  left: 82%;
- padding-top: 10%;
- margin-top: 5%;
+ padding-top: 6%;
  font-family: 'Lobster', Georgia, Times, serif;
  font-size: 8em;
  text-decoration: none;
@@ -72,6 +71,7 @@ h1{
 }
 
 .image-container {
+ padding-top: 5%;
  width: 100%;
 }
 
