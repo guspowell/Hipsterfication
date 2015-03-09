@@ -16,6 +16,11 @@ We also utilised Instagram's API to show the latest images hashtagged under the 
 ![SCREEN_SHOT](./public/images/app_screen_shot.png)
 
 
+Screenshot
+---------------
+
+![SCREEN_SHOT](./public/images/screenshot.png)
+
 Contributors
 --------------------
 

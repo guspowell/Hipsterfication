@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var http = require('http');
 var server = require('http').createServer(app);
-var trendingIndex = require('./data/trendingIndex');
+var trendingIndex = require('./data/trendingIndex.json');
 
 app.set('view engine', 'ejs');
 app.use('/stylesheets', express.static(__dirname + '/public/stylesheets'));

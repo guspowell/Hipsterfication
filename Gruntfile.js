@@ -4,19 +4,8 @@ module.exports = function(grunt) {
 
     pkg: grunt.file.readJSON('package.json'),
 
-    jasmine_node: {
-      all: ['spec/']
-    },
-
     jshint: {
-      all: ['Gruntfile.js', 'spec/*/**.js', 'src/*/**.js', 'tests/*/**.js']
-    },
-
-    mocha_casperjs: {
-      options: {},
-      files: {
-        src: ['test/**/*']
-      }
+      all: ['Gruntfile.js', 'spec/*/**.js', './public/javascripts/*']
     },
 
     execute: {
@@ -28,9 +17,8 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-mocha-casperjs');
   grunt.loadNpmTasks('grunt-execute');
 
-  grunt.registerTask('default', ['jshint', 'mocha_casperjs', 'execute']);
+  grunt.registerTask('default', ['jshint', 'execute']);
 
 };
