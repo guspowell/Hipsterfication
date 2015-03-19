@@ -1,50 +1,48 @@
 var map;
 var boroughsJson;
 var colors = ["#FF9999", "#FF6666", "#FF3333", "#FF0000", "#CC0000", "#800000"];
+var styles = [
+	{
+		"elementType": "labels",
+		"stylers": [
+			{ "visibility": "off" }
+		]
+	},{
+		"elementType": "geometry",
+		"stylers": [
+			{ "color": "#ffffff" }
+		]
+	},{
+		"featureType": "road.highway",
+		"stylers": [
+			{ "color": "#dcedf1" },
+			{ "weight": 0.6 }
+		]
+	},{
+		"featureType": "road.arterial",
+		"stylers": [
+			{ "weight": 0.2 },
+			{ "color": "#e6e6e7" }
+		]
+	},{
+		"featureType": "water",
+		"stylers": [
+			{ "color": "#1D283D" }
+		]
+	},
+];
 
 function initialize() {
 
-	var styles = [
-		{
-			"elementType": "labels",
-			"stylers": [
-				{ "visibility": "off" }
-			]
-		},{
-			"elementType": "geometry",
-			"stylers": [
-				{ "color": "#ffffff" }
-			]
-		},{
-			"featureType": "road.highway",
-			"stylers": [
-				{ "color": "#dcedf1" },
-				{ "weight": 0.6 }
-			]
-		},{
-			"featureType": "road.arterial",
-			"stylers": [
-				{ "weight": 0.2 },
-				{ "color": "#e6e6e7" }
-			]
-		},{
-			"featureType": "water",
-			"stylers": [
-				{ "color": "#1D283D" }
-			]
-		},
-	];
-
 	map = new google.maps.Map(document.getElementById('map-canvas'), {
-	zoom: 10,
-	center: {lat: 51.51, lng: - 0.10}
-
+		zoom: 10,
+		center: {lat: 51.51, lng: - 0.10}
 	})
 
 	map.setOptions({styles: styles});
 
 	$.getJSON("/trendingIndex", function(data) {
-		console.log(boroughsJson);
+
 		boroughsJson = data;
 
 		map.data.setStyle(function(feature){
@@ -60,12 +58,14 @@ function initialize() {
 
 			map.data.revertStyle();
 			map.data.overrideStyle(console.log(event.feature),console.log(event.feature.k.name));
+
 			$.ajax({
 				url: 'https://api.instagram.com/v1/tags/' + event.feature.k.name.replace(/\s/g, '') +'/media/recent?client_id=89cc7d4644154c718cc5fb612e5da3cb;count=20',
 				method: 'GET',
 				dataType: 'jsonp',
 				success: getInstagramImages
 			})
+
 		});
 
 		map.data.addListener('click', function(event) {
@@ -91,7 +91,6 @@ function initialize() {
 				$('#image' + (i+1)).attr('src', urls[i])
 			};
 		}
-
 
 	});
 
