@@ -1,7 +1,6 @@
 var map;
 var boroughsJson;
 var colors = ["#FF9999", "#FF6666", "#FF3333", "#FF0000", "#CC0000", "#800000"];
-// var colors = ["#FFFF00", "#FFCC00", "#FF9933", "#FF6600", "#FF4719", "#FF0000"];
 
 function initialize() {
 
