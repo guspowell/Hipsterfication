@@ -14,16 +14,16 @@ body {
   padding-top: 15%;
 }
 
-a {
+.box .title {
   font-family: 'Lobster', Georgia, Times, serif;
   font-size: 10em;
   text-decoration: none;
   color: #F95B58;
 }
 
-h1 {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  /*font-style: italic;*/
+a { text-decoration: none; }
+
+.box h1 {
   font-weight: 400;
   font-size: 1.8em;
   padding-top: 0.5%;
