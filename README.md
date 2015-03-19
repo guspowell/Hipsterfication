@@ -13,6 +13,10 @@ We were able to build an algorithm that gave us an index of 'trendiness' based o
 
 We also utilised Instagram's API to show the latest images hashtagged under the area names for the district you clicked on, this we felt would provide some more background to the culture and happenings of that chosen area.
 
+Link
+---------------
+View live at:<br> [https://london-hipsterfication.herokuapp.com/](https://london-hipsterfication.herokuapp.com/)
+
 Screenshot
 ---------------
 
